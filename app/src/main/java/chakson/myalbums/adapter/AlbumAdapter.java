@@ -24,21 +24,19 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View albumView = convertView;
-        TextView titleView;
-        // ImageView coverView;
+        Album album = getItem(position);
 
+        View albumView = convertView;
         if (albumView == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             albumView = inflater.inflate(R.layout.album_row, parent, false);
         }
 
-        Album album = getItem(position);
-
-        titleView = (TextView) albumView.findViewById(R.id.textAlbumTitle);
-        // coverView = (ImageView) albumView.findViewById(R.id.imageAlbumCover);
-
+        TextView titleView = (TextView) albumView.findViewById(R.id.textAlbumTitle);
         titleView.setText(album.getTitle());
+
+        ImageView coverView = (ImageView) albumView.findViewById(R.id.imageAlbumCover);
+        coverView.setImageBitmap(album.getThumbnail());
 
         return albumView;
     }

@@ -5,11 +5,12 @@ import android.graphics.Bitmap;
 /**
  * Created by Nikola Carija on 5/25/16.
  */
-public class Album {
+public class Photo {
 
     private int id;
-    private int userId;
+    private int albumId;
     private String title;
+    private Bitmap image;
     private Bitmap thumbnail;
 
     public int getId() {
@@ -20,12 +21,12 @@ public class Album {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getAlbumId() {
+        return albumId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setAlbumId(int albumId) {
+        this.albumId = albumId;
     }
 
     public String getTitle() {
@@ -34,6 +35,14 @@ public class Album {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Bitmap getImage() {
+        return image;
+    }
+
+    public void setImage(Bitmap image) {
+        this.image = image;
     }
 
     public Bitmap getThumbnail() {
